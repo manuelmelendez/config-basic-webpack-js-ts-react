@@ -1,0 +1,29 @@
+@import "./Library/variables";
+@import "./Library/fonts";
+
+a {
+  color: $color-white;
+}
+
+.links-contact {
+  background-color: $color-W-Smoke;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  padding: 5px 2px;
+  img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/*
+1 -- SASS no creo las variables en el archivo original como POSTCSS-
+Ejemplo: 
+:root {
+  --color: #8dd6f9;
+  --background-color: #2b3a42;
+}
+
+2 -- Al resultando .css PostCss no le coloco los presets-- para cada navegador!!
+*/
