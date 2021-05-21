@@ -4,7 +4,7 @@ const path = require('path'),
       CssMinimizerPlugin = require("css-minimizer-webpack-plugin"),
       TerserPlugin = require("terser-webpack-plugin"),
       CopyPlugin = require("copy-webpack-plugin"),
-      Dotenv = require("dotenv-webpack"),
+      // Dotenv = require("dotenv-webpack"),
       {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 
@@ -38,6 +38,10 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: "ts-loader",
+      },
+      {
+        test: /\.pug$/,
+        use: [ 'pug-loader' ],
       },
       {
         test: /\.html$/i,
@@ -99,6 +103,12 @@ module.exports = {
         useShortDoctype: true
     },
     }),
+    /*     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/app/views/pages/layout.pug'),
+      filename: "./layout.html",
+      chunks: ["js"],
+      hash: true,
+    }), */
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "./react.html",
@@ -126,7 +136,7 @@ module.exports = {
       ],
     }),
 
-    new Dotenv(),
+    // new Dotenv(),
 
   ],
 

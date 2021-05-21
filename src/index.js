@@ -7,6 +7,7 @@ import { HelloWorld } from "./app/components/HelloWorld.js";
 import github from '@images/github.png';
 import twitter from '@images/twitter.png';
 import instagram from '@images/instagram.png';
+import pugImage from '@images/pug-puppy.png';
 
 const arr = [1, 2, 3],
   codeESNext = () => console.log(...arr);
@@ -23,7 +24,8 @@ const d = document,
   $logo = d.createElement("img"),
   $img = d.createElement("img"),
   $nav = d.createElement("nav"),
-  $divCard = d.createElement("div");
+  $divCard = d.createElement("div"),
+  $headerPug = d.getElementById("header-pug");
 
 let menu = "",
   hello = new HelloWorld("Vanilla JS");
@@ -55,3 +57,8 @@ $app.appendChild($logo);
 $app.appendChild($nav);
 $app.appendChild($divCard);
 //$app.appendChild($img);
+
+$headerPug.innerHTML=`
+<a href="https://twitter.com/manuelmelendez0">
+<img width="250px" src="${pugImage}" />
+</a>`

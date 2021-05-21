@@ -1,9 +1,9 @@
 const path = require('path'),
     HtmlWebpackPlugin = require("html-webpack-plugin"),
     MiniCssExtractPlugin = require("mini-css-extract-plugin"),
-    CopyPlugin = require("copy-webpack-plugin"),
-    Dotenv = require("dotenv-webpack"),
-    BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;    
+    CopyPlugin = require("copy-webpack-plugin");
+    // Dotenv = require("dotenv-webpack"),
+    // BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;    
 // {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 
@@ -40,6 +40,10 @@ module: {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         use: "ts-loader",
+    },
+    {
+        test: /\.pug$/,
+        use: [ 'pug-loader' ],
     },
     {
         test: /\.html$/i,
@@ -101,6 +105,13 @@ plugins: [
         useShortDoctype: false
     },
     }),
+        new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, './src/app/html/pages/layout.pug'),
+        filename: "./layout.html",
+        chunks: ["js"],
+        hash: true,
+    }),
+
     new HtmlWebpackPlugin({
     template: "./src/index.html",
     filename: "./react.html",
@@ -128,9 +139,9 @@ plugins: [
     ],
     }),
 
-    new Dotenv(),
+    // new Dotenv(),
 
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
 
 ],
 
