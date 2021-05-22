@@ -1,3 +1,9 @@
+/** 
+ * @file index.js THE MAIN FILE
+ * @author manuelmelendez
+ * @see <a href="https://manuelmelendez.github.io/">Manuel Melendez</a>
+ */
+
 import "./app/sass/index.scss";
 import "./app/styles/style.css";
 import logo from "@images/webpack.svg";

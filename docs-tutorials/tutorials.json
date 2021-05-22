@@ -1,0 +1,16 @@
+{
+    "first-tutorial": {
+    "title": "Getting Started",
+    "children": {
+        "childA": {
+            "title": "Child A"
+        },
+        "childB": {
+            "title": "Child B"
+        }
+    }
+    },
+    "second-tutorial": {
+        "title": "Installation"
+    }
+}

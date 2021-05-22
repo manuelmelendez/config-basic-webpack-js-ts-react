@@ -11,6 +11,13 @@
     },
     "opts": {
         "recurse": "true",
-        "destination": "./docs/"
+        "destination": "./docs/",
+        "template": "node_modules/docdash",
+        "_comentario": "Este es otro-> template: ./node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+            "theme": "dark"
+        },
+        "tutorials": "./docs-tutorials",
+        "readme": "./README.md"
     }
 }
